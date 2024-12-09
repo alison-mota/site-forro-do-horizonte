@@ -2,15 +2,12 @@ import React from 'react';
 import { Music2, Triangle, Drum, Guitar, Music } from 'lucide-react';
 import FleeingInstrument from './FleeingInstrument';
 
-// Helper function to generate random positions
 const getRandomPosition = () => {
   const randomValue = Math.random() * 100;
   return `${randomValue}%`;
 };
 
-// Create array of instruments with key forró instruments
 const instruments = [
-  // Multiple accordions (sanfonas)
   ...Array(4).fill(null).map((_, i) => ({
     Icon: Music2,
     className: `absolute text-white/30 w-16 h-16`,
@@ -20,7 +17,6 @@ const instruments = [
       left: getRandomPosition()
     }
   })),
-  // Multiple triangles
   ...Array(4).fill(null).map((_, i) => ({
     Icon: Triangle,
     className: `absolute text-white/30 w-12 h-12`,
@@ -30,7 +26,6 @@ const instruments = [
       left: getRandomPosition()
     }
   })),
-  // Multiple drums (zabumba)
   ...Array(4).fill(null).map((_, i) => ({
     Icon: Drum,
     className: `absolute text-white/30 w-14 h-14`,
@@ -40,7 +35,6 @@ const instruments = [
       left: getRandomPosition()
     }
   })),
-  // Additional musical elements
   ...Array(3).fill(null).map((_, i) => ({
     Icon: Guitar,
     className: `absolute text-white/30 w-10 h-10`,

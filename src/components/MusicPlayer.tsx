@@ -11,7 +11,6 @@ const MusicPlayer = () => {
     if (audioRef.current) {
       audioRef.current.volume = 0.5;
       
-      // Extract track name from the source URL
       const sourceUrl = audioRef.current.querySelector('source')?.src;
       if (sourceUrl) {
         const fileName = sourceUrl.split('/').pop() || '';
@@ -23,7 +22,6 @@ const MusicPlayer = () => {
         setTrackName(formattedName);
       }
 
-      // Set up audio event listeners
       const handlePlay = () => setIsPlaying(true);
       const handlePause = () => setIsPlaying(false);
       const handleEnded = () => setIsPlaying(false);

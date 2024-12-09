@@ -19,11 +19,9 @@ const FleeingInstrument: React.FC<FleeingInstrumentProps> = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Generate random animation parameters
-  const duration = 30 + Math.random() * 30; // Random duration between 30-60s
-  const delay = Math.random() * 5; // Random delay between 0-5s
+  const duration = 30 + Math.random() * 30;
+  const delay = Math.random() * 5;
 
-  // Create a more complex path with multiple points
   const pathPoints = Array(8).fill(0).map(() => ({
     x: Math.random() * window.innerWidth - window.innerWidth/2,
     y: Math.random() * window.innerHeight - window.innerHeight/2

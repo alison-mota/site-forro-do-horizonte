@@ -10,16 +10,16 @@ const tracks = [
     title: "Ah, sabiá",
     artist: "Forró do Horizonte",
     duration: "3:06",
-    file: "public/audio/Ah-sabia.mp3"
+    file: "/public/audio/Ah-sabia.mp3"
   },
   {
     id: 2,
     title: "Cabe no Peito",
     artist: "Forró do Horizonte",
     duration: "3:41",
-    file: "public/audio/Cabe-no-peito.mpeg"
+    file: "/public/audio/Cabe-no-peito.mpeg"
   },
-  // Add more tracks as needed
+  // Adicionar mais músicas
 ];
 
 const Player = () => {
@@ -37,19 +37,16 @@ const Player = () => {
   } = usePlayerStore();
 
   useEffect(() => {
-    // Set audio reference in store
     if (audioRef.current) {
       setAudioRef(audioRef);
       audioRef.current.volume = volume;
     }
 
-    // Disable global player when entering this page
     const globalPlayer = document.querySelector('audio');
     if (globalPlayer) {
       globalPlayer.pause();
     }
 
-    // Start with the first track if no track is selected
     if (!currentTrack && tracks.length > 0) {
       setCurrentTrack(tracks[0]);
     }
@@ -75,7 +72,6 @@ const Player = () => {
     if (currentIndex < tracks.length - 1) {
       setCurrentTrack(tracks[currentIndex + 1]);
     } else if (tracks.length > 0) {
-      // Loop back to the first track
       setCurrentTrack(tracks[0]);
     }
   };
