@@ -10,14 +10,14 @@ const tracks = [
     title: "Ah, sabiá",
     artist: "Forró do Horizonte",
     duration: "3:06",
-    file: "/public/audio/Ah-sabia.mp3"
+    file: "public/audio/Ah-sabia.mp3"
   },
   {
     id: 2,
     title: "Cabe no Peito",
     artist: "Forró do Horizonte",
     duration: "3:41",
-    file: "/public/audio/Cabe-no-peito.mpeg"
+    file: "public/audio/Cabe-no-peito.mpeg"
   },
   // Add more tracks as needed
 ];
