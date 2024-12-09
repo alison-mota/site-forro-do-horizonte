@@ -32,7 +32,7 @@ const Home = () => {
               className="flex justify-center"
             >
               <img 
-                src="/images/logo.png" 
+                src="./images/logo.png"
                 alt="Forró do Horizonte"
                 className="w-[500px] h-auto"
               />
