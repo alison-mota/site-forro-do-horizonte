@@ -35,9 +35,9 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-amber-200 mb-4">Contato</h4>
             <ul className="space-y-2">
-              <li className="text-amber-100/80">contato@forrodohorizonte.com.br</li>
-              <li className="text-amber-100/80">(XX) XXXX-XXXX</li>
-              <li className="text-amber-100/80">Recife, PE</li>
+              <li className="text-amber-100/80">forrodohorizonte@gmail.com</li>
+              <li className="text-amber-100/80">(34) 99902-3439</li>
+              <li className="text-amber-100/80">Uberlândia, MG</li>
             </ul>
           </div>
 
@@ -48,7 +48,12 @@ const Footer = () => {
               <a href="#" className="text-amber-100/80 hover:text-amber-100 transition-colors">
                 <Facebook className="w-6 h-6" />
               </a>
-              <a href="#" className="text-amber-100/80 hover:text-amber-100 transition-colors">
+              <a 
+                href="https://www.instagram.com/forrodohorizonte/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-amber-100/80 hover:text-amber-100 transition-colors"
+              >
                 <Instagram className="w-6 h-6" />
               </a>
               <a href="#" className="text-amber-100/80 hover:text-amber-100 transition-colors">

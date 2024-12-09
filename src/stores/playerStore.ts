@@ -46,17 +46,7 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
     }
   },
   setCurrentTrack: (track) => {
-    set({ currentTrack: track });
-    const { audioRef } = get();
-    if (audioRef?.current) {
-      const playPromise = audioRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(error => {
-          console.error('Playback failed:', error);
-        });
-      }
-      set({ isPlaying: true });
-    }
+    set({ currentTrack: track, isPlaying: false });
   },
   setVolume: (volume) => {
     set({ volume });

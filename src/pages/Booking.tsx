@@ -73,17 +73,17 @@ const Booking = () => {
                 Contato
               </h3>
               <div className="space-y-4">
-                <a href="mailto:contato@forrodohorizonte.com.br" className="flex items-center gap-3 text-white hover:text-amber-200 transition-colors">
+                <a href="mailto:forrodohorizonte@gmail.com" className="flex items-center gap-3 text-white hover:text-amber-200 transition-colors">
                   <Mail className="w-5 h-5" />
-                  contato@forrodohorizonte.com.br
+                  forrodohorizonte@gmail.com
                 </a>
                 <p className="flex items-center gap-3 text-white">
                   <Phone className="w-5 h-5" />
-                  (XX) XXXX-XXXX
+                  (34) 99902-3439
                 </p>
                 <p className="flex items-center gap-3 text-white">
                   <MapPin className="w-5 h-5" />
-                  Recife, PE
+                  Uberlândia, MG
                 </p>
               </div>
             </div>

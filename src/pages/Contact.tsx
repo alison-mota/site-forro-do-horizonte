@@ -27,13 +27,13 @@ const Contact = () => {
               </h3>
               <div className="space-y-6">
                 <a 
-                  href="mailto:contato@forrodohorizonte.com.br" 
+                  href="mailto:forrodohorizonte@gmail.com" 
                   className="flex items-center gap-3 text-white hover:text-amber-200 transition-colors group"
                 >
                   <Mail className="w-6 h-6 group-hover:scale-110 transition-transform" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-amber-100/80">contato@forrodohorizonte.com.br</p>
+                    <p className="text-amber-100/80">forrodohorizonte@gmail.com</p>
                   </div>
                 </a>
                 
@@ -41,7 +41,7 @@ const Contact = () => {
                   <Phone className="w-6 h-6" />
                   <div>
                     <p className="font-medium">Telefone</p>
-                    <p className="text-amber-100/80">(XX) XXXX-XXXX</p>
+                    <p className="text-amber-100/80">(34) 99902-3439</p>
                   </div>
                 </div>
                 
@@ -49,7 +49,7 @@ const Contact = () => {
                   <MapPin className="w-6 h-6" />
                   <div>
                     <p className="font-medium">Localização</p>
-                    <p className="text-amber-100/80">Recife, Pernambuco</p>
+                    <p className="text-amber-100/80">Uberlândia, Minas Gerais</p>
                   </div>
                 </div>
 
