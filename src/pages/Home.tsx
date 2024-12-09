@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Music, ArrowDown } from 'lucide-react';
-import FloatingInstruments from '../components/FloatingInstruments';
 import PageBackground from '../components/PageBackground';
 
 const Home = () => {
@@ -11,8 +10,7 @@ const Home = () => {
 
   return (
     <PageBackground>
-      <FloatingInstruments />
-      
+
       {/* Hero Section */}
       <motion.section 
         style={{ opacity, scale }}
@@ -32,7 +30,7 @@ const Home = () => {
               className="flex justify-center"
             >
               <img 
-                src="/public/images/logo.png"
+                src="/images/logo.png"
                 alt="Forró do Horizonte"
                 className="w-[500px] h-auto"
               />

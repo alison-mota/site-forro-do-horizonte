@@ -19,6 +19,7 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
+    { path: '', label: 'Início' },
     { path: '/', label: 'Início' },
     { path: '/about', label: 'Quem Somos' },
     { path: '/booking', label: 'Contratantes' },
