@@ -23,7 +23,7 @@ const Navigation = () => {
     { path: '/about', label: 'Quem Somos' },
     { path: '/booking', label: 'Contratantes' },
     { path: '/contact', label: 'Contato' },
-    { path: '/player', label: 'Player' },
+    { path: '/player', label: 'Músicas Autorais' },
   ];
 
   return (

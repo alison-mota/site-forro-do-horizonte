@@ -50,7 +50,7 @@ const Home = () => {
                 href="https://open.spotify.com/artist/your-artist-id"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 bg-green-500/20 hover:bg-green-500/30 text-green-400 px-8 py-4 rounded-full transition-all transform hover:scale-105 backdrop-blur-sm"
+                className="flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors"
               >
                 <Music className="w-6 h-6 group-hover:animate-spin" />
                 Ouça no Spotify
@@ -59,7 +59,7 @@ const Home = () => {
           </motion.div>
         </div>
 
-        <motion.div 
+        <motion.div
           className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
