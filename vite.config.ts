@@ -4,6 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  base: "/site-forro-do-horizonte",
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
