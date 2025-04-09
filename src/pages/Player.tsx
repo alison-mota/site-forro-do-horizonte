@@ -19,6 +19,7 @@ const tracks = [
     duration: "3:06",
     file: "/audio/Ah-sabia.mp3"
   },
+
   // Adicionar mais músicas
 ];
 
