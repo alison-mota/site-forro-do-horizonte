@@ -7,17 +7,17 @@ import { usePlayerStore } from '../stores/playerStore';
 const tracks = [
   {
     id: 1,
+    title: "Cabe no Peito",
+    artist: "Forró do Horizonte",
+    duration: "3:41",
+    file: "/audio/Cabe-no-peito.mp3"
+  },
+  {
+    id: 2,
     title: "Ah, sabiá",
     artist: "Forró do Horizonte",
     duration: "3:06",
     file: "/audio/Ah-sabia.mp3"
-  },
-  {
-    id: 2,
-    title: "Cabe no Peito",
-    artist: "Forró do Horizonte",
-    duration: "3:41",
-    file: "/audio/Cabe-no-peito.mpeg"
   },
   // Adicionar mais músicas
 ];
