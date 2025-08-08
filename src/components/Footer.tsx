@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-2xl font-bold text-amber-400">Forró do Horizonte</h3>
             <p className="text-amber-100/80">
-              Levando a autenticidade do forró pé de serra para todo o Brasil.
+              Levando o forró pé de serra para todo o Brasil.
             </p>
           </div>
 
@@ -36,6 +36,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-amber-200 mb-4">Contato</h4>
             <ul className="space-y-2">
               <li className="text-amber-100/80">forrodohorizonte@gmail.com</li>
+              <li className="text-amber-100/80">(64) 98120-6193</li>
               <li className="text-amber-100/80">(34) 99902-3439</li>
               <li className="text-amber-100/80">Uberlândia, MG</li>
             </ul>
@@ -45,9 +46,6 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-amber-200 mb-4">Redes Sociais</h4>
             <div className="flex space-x-4">
-              <a href="#" className="text-amber-100/80 hover:text-amber-100 transition-colors">
-                <Facebook className="w-6 h-6" />
-              </a>
               <a 
                 href="https://www.instagram.com/forrodohorizonte/" 
                 target="_blank" 
@@ -56,11 +54,12 @@ const Footer = () => {
               >
                 <Instagram className="w-6 h-6" />
               </a>
-              <a href="#" className="text-amber-100/80 hover:text-amber-100 transition-colors">
+              <a
+                  href="https://www.youtube.com/watch?v=5kNEu7EyDng&list=OLAK5uy_nYnl622xRZu7ZUEXi4KsaAPsicRtiuKkw&ab_channel=Forr%C3%B3DoHorizonte-Topic"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-amber-100/80 hover:text-amber-100 transition-colors">
                 <Youtube className="w-6 h-6" />
-              </a>
-              <a href="#" className="text-amber-100/80 hover:text-amber-100 transition-colors">
-                <Music className="w-6 h-6" />
               </a>
             </div>
           </div>
