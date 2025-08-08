@@ -12,7 +12,7 @@ const PageBackground: React.FC<PageBackgroundProps> = ({ children }) => {
       <div 
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80")',
+          backgroundImage: 'url("/images/general/background.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
