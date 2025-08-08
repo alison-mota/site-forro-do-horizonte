@@ -1,16 +1,7 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import path from 'path';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  plugins: [react()],
-  base: "https:forrodohorizonte.com.br/",
-  optimizeDeps: {
-    exclude: ['lucide-react'],
-  },
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
-});
+    base: '/site-forro-do-horizonte/',
+    plugins: [react()],
+})
