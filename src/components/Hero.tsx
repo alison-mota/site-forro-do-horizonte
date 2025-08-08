@@ -1,5 +1,6 @@
 import React from 'react';
 import { Music } from 'lucide-react';
+import {APP_CONSTANTS} from "../configs/constants.tsx";
 
 const Hero = () => {
   return (
@@ -18,7 +19,7 @@ const Hero = () => {
           Forró do Horizonte
         </h1>
         <a
-          href="https://open.spotify.com/artist/your-artist-id"
+          href={APP_CONSTANTS.SPOTIFY_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full transition-all transform hover:scale-105"

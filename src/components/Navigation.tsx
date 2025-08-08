@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Music } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import {APP_CONSTANTS} from '../configs/constants';
 import MusicPlayer from './MusicPlayer';
 
 const Navigation = () => {
@@ -84,7 +85,7 @@ const Navigation = () => {
                     </Link>
                   ))}
                   <a
-                    href="https://open.spotify.com/artist/your-artist-id"
+                    href={APP_CONSTANTS.SPOTIFY_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors"
@@ -115,7 +116,7 @@ const Navigation = () => {
               </Link>
             ))}
             <motion.a
-              href="https://open.spotify.com/artist/your-artist-id"
+              href={APP_CONSTANTS.SPOTIFY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-green-500/20 hover:bg-green-500/30 text-green-400 px-4 py-2 rounded-full transition-colors"

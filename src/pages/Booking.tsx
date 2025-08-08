@@ -6,19 +6,9 @@ import PhotoGallery from '../components/PhotoGallery';
 
 const downloadFiles = [
   { 
-    name: 'Mapa de Palco',
+    name: 'Mapa de Palco e Rider Técnico',
     filename: 'mapa-de-palco.pdf',
     path: '/downloads/mapa-de-palco.pdf'
-  },
-  { 
-    name: 'Release da Banda',
-    filename: 'release.pdf',
-    path: '/downloads/release.pdf'
-  },
-  { 
-    name: 'Rider Técnico',
-    filename: 'rider-tecnico.pdf',
-    path: '/downloads/rider-tecnico.pdf'
   }
 ];
 
@@ -79,7 +69,7 @@ const Booking = () => {
                 </a>
                 <p className="flex items-center gap-3 text-white">
                   <Phone className="w-5 h-5" />
-                  (34) 99902-3439
+                  (64) 98120-6193 | (34) 99902-3439
                 </p>
                 <p className="flex items-center gap-3 text-white">
                   <MapPin className="w-5 h-5" />
@@ -102,10 +92,9 @@ const Booking = () => {
               </h3>
               <ul className="list-disc list-inside space-y-2 text-white">
                 <li>Duração: 2 horas de show</li>
-                <li>Equipe: 6 músicos profissionais</li>
-                <li>Repertório personalizado</li>
+                <li>Equipe: 4 músicos profissionais</li>
+                <li>Repertório original com autorais e outros sucessos</li>
                 <li>Equipamento de som próprio (opcional)</li>
-                <li>Iluminação temática</li>
               </ul>
             </div>
           </motion.div>
