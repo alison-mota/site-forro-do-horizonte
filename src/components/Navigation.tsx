@@ -25,6 +25,7 @@ const Navigation = () => {
     { path: '/booking', label: 'Contratantes' },
     { path: '/contact', label: 'Contato' },
     { path: '/player', label: 'Músicas Autorais' },
+    { path: '/letras', label: 'Letras e Cifras' },
   ];
 
   return (

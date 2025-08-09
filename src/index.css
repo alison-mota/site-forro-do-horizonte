@@ -125,3 +125,63 @@
 .redcurrant-font {
   font-family: 'Redcurrant', sans-serif;
 }
+
+.prose-invert a {
+    color: #fbbf24;
+    text-decoration: underline;
+}
+
+.prose-invert strong {
+    color: white;
+    font-weight: bold;
+}
+
+.chord {
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+/* Estilos para a playlist */
+.chord-display {
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+    line-height: 2.5;
+}
+
+.chord {
+    color: #f59e0b;
+    font-weight: bold;
+    position: relative;
+    top: -0.8em;
+    font-size: 0.75em;
+}
+
+.chord-error {
+    color: #ef4444;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.prose-invert a {
+    color: #f59e0b;
+    text-decoration: underline;
+}
+
+.prose-invert strong {
+    color: white;
+    font-weight: bold;
+}
+
+/* Transições suaves */
+.collapsible-content {
+    transition: all 0.3s ease-out;
+    overflow: hidden;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+}

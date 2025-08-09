@@ -29,7 +29,7 @@ const Home = () => {
                         </motion.div>
 
                         <h2 className="text-2xl md:text-3xl text-amber-200 font-light">
-                            Isso é Brasil profundo, sul da América pro mundo!
+                            Isso é Brasil profundo: sul da América pro mundo!
                         </h2>
 
                         <motion.div
