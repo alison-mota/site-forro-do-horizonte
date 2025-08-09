@@ -6,6 +6,7 @@ import About from './pages/About';
 import Booking from './pages/Booking';
 import Contact from './pages/Contact';
 import Player from './pages/Player';
+import LyricsPage from "./pages/LyricsPage.tsx";
 
 const RedirectHandler = () => {
     const navigate = useNavigate();
@@ -34,6 +35,7 @@ function App() {
                     <Route path="/booking" element={<Booking />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/player" element={<Player />} />
+                    <Route path="/letras" element={<LyricsPage />} />
                 </Routes>
             </div>
         </Router>
