@@ -339,7 +339,7 @@ const EventDetail = () => {
 
     return (
         <PageBackground>
-            <div className="container mx-auto px-4 py-16">
+            <div className="container mx-auto px-4 pt-8 pb-16">
                 {/* Botão voltar */}
                 <Link
                     to="/fotos-dos-eventos"
@@ -394,7 +394,7 @@ const EventDetail = () => {
                 {/* Galeria de fotos */}
                 {!isPreloading && (
                     <>
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                        <div className="grid grid-cols-4 md:grid-cols-3 lg:grid-cols-5 gap-4">
                             {visibleImages.map((image, index) => {
                                 const realIndex = validImages.indexOf(image);
                                 // Usa o índice do array como chave única, com fallback para a URL

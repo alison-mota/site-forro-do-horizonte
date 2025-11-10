@@ -18,8 +18,26 @@ const Footer = () => {
             <h4 className="text-base font-semibold text-amber-200 mb-2">Contato</h4>
             <ul className="space-y-1 text-sm">
               <li className="text-amber-100/80">forrodohorizonte@gmail.com</li>
-              <li className="text-amber-100/80">(64) 98120-6193</li>
-              <li className="text-amber-100/80">(34) 99902-3439</li>
+              <li>
+                <a 
+                  href="https://wa.me/5564981206193" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-amber-100/80 hover:text-amber-200 transition-colors"
+                >
+                  (64) 98120-6193
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://wa.me/5534999023439" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-amber-100/80 hover:text-amber-200 transition-colors"
+                >
+                  (34) 99902-3439
+                </a>
+              </li>
               <li className="text-amber-100/80">Uberlândia, MG</li>
             </ul>
           </div>

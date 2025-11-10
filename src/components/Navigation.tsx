@@ -20,7 +20,6 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { path: '/', label: 'Início' },
     { path: '/about', label: 'Quem Somos' },
     { path: '/booking', label: 'Contratantes' },
     { path: '/contact', label: 'Contato' },
@@ -102,21 +101,35 @@ const Navigation = () => {
           </AnimatePresence>
 
           <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className="relative text-white hover:text-amber-400 transition-colors"
-              >
-                {item.label}
-                {location.pathname === item.path && (
-                  <motion.div
-                    layoutId="underline"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-amber-400"
-                  />
-                )}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              // Verifica se a rota está ativa
+              // Para "Fotos", também considera as páginas de detalhes do evento (rotas dinâmicas)
+              let isActive = false;
+              if (item.path === '/fotos-dos-eventos') {
+                // Ativo se estiver na página de fotos ou em uma página de detalhes de evento
+                const knownPaths = ['/', '/player', '/letras', '/about', '/booking', '/contact'];
+                isActive = location.pathname === item.path || 
+                  (location.pathname !== '/' && !knownPaths.some(path => location.pathname === path || location.pathname.startsWith(path + '/')));
+              } else {
+                isActive = location.pathname === item.path;
+              }
+              
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className="relative text-white hover:text-amber-400 transition-colors"
+                >
+                  {item.label}
+                  {isActive && (
+                    <motion.div
+                      layoutId="underline"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-amber-400"
+                    />
+                  )}
+                </Link>
+              );
+            })}
             <motion.a
               href={APP_CONSTANTS.SPOTIFY_URL}
               target="_blank"

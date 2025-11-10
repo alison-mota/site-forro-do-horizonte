@@ -5,15 +5,7 @@ import PageBackground from '../components/PageBackground';
 const About = () => {
     return (
         <PageBackground>
-            <div className="container mx-auto px-4 py-16">
-                <motion.h2
-                    initial={{ y: 20 }}
-                    animate={{ y: 0 }}
-                    className="text-5xl font-bold text-center mb-16 text-white"
-                >
-                    Quem Somos
-                </motion.h2>
-
+            <div className="container mx-auto px-4 pt-8 pb-16">
                 <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto items-stretch">
                     <motion.div
                         initial={{ x: -50 }}

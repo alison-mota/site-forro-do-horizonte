@@ -6,15 +6,7 @@ import PageBackground from '../components/PageBackground';
 const Contact = () => {
     return (
         <PageBackground>
-            <div className="container mx-auto px-4 py-16">
-                <motion.h2
-                    initial={{ y: 20 }}
-                    animate={{ y: 0 }}
-                    className="text-5xl font-bold text-center mb-16 text-white"
-                >
-                    Contato
-                </motion.h2>
-
+            <div className="container mx-auto px-4 pt-8 pb-16">
                 <div className="flex justify-center">
                     <div className="w-full max-w-2xl">
                         <motion.div
@@ -38,13 +30,18 @@ const Contact = () => {
                                         </div>
                                     </a>
 
-                                    <div className="flex items-center gap-3 text-white">
-                                        <Phone className="w-6 h-6" />
+                                    <a
+                                        href="https://wa.me/5534999023439"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-3 text-white hover:text-amber-200 transition-colors group"
+                                    >
+                                        <Phone className="w-6 h-6 group-hover:scale-110 transition-transform" />
                                         <div>
                                             <p className="font-medium">Telefone</p>
                                             <p className="text-amber-100/80">(34) 99902-3439</p>
                                         </div>
-                                    </div>
+                                    </a>
 
                                     <div className="flex items-center gap-3 text-white">
                                         <MapPin className="w-6 h-6" />

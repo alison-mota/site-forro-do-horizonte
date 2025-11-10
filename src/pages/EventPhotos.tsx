@@ -44,6 +44,12 @@ const EventPhotos = () => {
 
     // Função para tocar o player
     const playAudio = async () => {
+        // Verifica se o usuário já pausou manualmente
+        const userPaused = sessionStorage.getItem('userPausedMusic');
+        if (userPaused === 'true') {
+            return; // Não toca se o usuário já pausou
+        }
+
         const audioElement = document.querySelector('audio') as HTMLAudioElement;
         if (audioElement && audioElement.paused) {
             try {
@@ -67,6 +73,12 @@ const EventPhotos = () => {
         };
 
         const attemptPlay = async (): Promise<boolean> => {
+            // Verifica se o usuário já pausou manualmente
+            const userPaused = sessionStorage.getItem('userPausedMusic');
+            if (userPaused === 'true') {
+                return false; // Não tenta tocar se o usuário já pausou
+            }
+
             const audioElement = getAudioElement();
             
             if (!audioElement) {
@@ -163,23 +175,7 @@ const EventPhotos = () => {
 
     return (
         <PageBackground>
-            <div className="container mx-auto px-4 py-16">
-                <motion.h2
-                    initial={{ y: 20 }}
-                    animate={{ y: 0 }}
-                    className="text-4xl md:text-5xl font-serif font-bold text-center mb-16 text-white relative inline-block w-full"
-                >
-                    <span className="relative">
-                        Fotos
-                        <motion.div
-                            initial={{ width: 0 }}
-                            animate={{ width: '100%' }}
-                            transition={{ duration: 0.5, delay: 0.3 }}
-                            className="absolute -bottom-2 left-0 h-0.5 bg-amber-400"
-                        />
-                    </span>
-                </motion.h2>
-
+            <div className="container mx-auto px-4 pt-8 pb-16">
                 {isLoading && (
                     <div className="text-center py-16">
                         <p className="text-white/80 text-lg">Carregando eventos...</p>

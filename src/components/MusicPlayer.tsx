@@ -8,9 +8,16 @@ const MusicPlayer = () => {
   const [trackName, setTrackName] = useState('');
 
   useEffect(() => {
-
     if (audioRef.current) {
       audioRef.current.volume = 0.5;
+      
+      // Verifica se o usuário já pausou manualmente
+      const userPaused = sessionStorage.getItem('userPausedMusic');
+      if (userPaused === 'true') {
+        // Se o usuário pausou, garante que o áudio está pausado
+        audioRef.current.pause();
+        setIsPlaying(false);
+      }
       
       const sourceUrl = audioRef.current.querySelector('source')?.src;
       if (sourceUrl) {
@@ -45,7 +52,11 @@ const MusicPlayer = () => {
     if (audioRef.current) {
       if (isPlaying) {
         audioRef.current.pause();
+        // Marca que o usuário pausou manualmente
+        sessionStorage.setItem('userPausedMusic', 'true');
       } else {
+        // Remove a flag quando o usuário clica em play manualmente
+        sessionStorage.removeItem('userPausedMusic');
         const playPromise = audioRef.current.play();
         if (playPromise !== undefined) {
           playPromise.catch(error => {
@@ -77,7 +88,7 @@ const MusicPlayer = () => {
 
   return (
     <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-      <audio ref={audioRef} autoPlay>
+      <audio ref={audioRef}>
         <source src="/audio/Cabe-no-peito.mp3" type="audio/mp3" />
       </audio>
       

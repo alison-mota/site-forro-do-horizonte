@@ -140,15 +140,7 @@ Meu amor…`,
 
     return (
         <PageBackground>
-            <div className="container mx-auto px-4 py-16">
-                <motion.h2
-                    initial={{ y: 20 }}
-                    animate={{ y: 0 }}
-                    className="text-5xl font-bold text-center mb-8 text-white"
-                >
-                    Nossas Músicas
-                </motion.h2>
-
+            <div className="container mx-auto px-4 pt-8 pb-16">
                 <div className="max-w-2xl mx-auto mb-8">
                     <input
                         type="text"
