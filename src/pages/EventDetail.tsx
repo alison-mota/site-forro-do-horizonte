@@ -422,18 +422,6 @@ const EventDetail = () => {
                                                     console.warn(`Imagem ${realIndex + 1} falhou após pré-carregamento - ocultando quadro`);
                                                 }}
                                             />
-                                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                                                <button
-                                                    onClick={(e) => {
-                                                        e.stopPropagation();
-                                                        handleDownload(image);
-                                                    }}
-                                                    className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-colors"
-                                                    title="Baixar foto"
-                                                >
-                                                    <Download className="w-5 h-5" />
-                                                </button>
-                                            </div>
                                         </div>
                                     </motion.div>
                                 );
