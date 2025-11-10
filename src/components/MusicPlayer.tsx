@@ -8,6 +8,7 @@ const MusicPlayer = () => {
   const [trackName, setTrackName] = useState('');
 
   useEffect(() => {
+
     if (audioRef.current) {
       audioRef.current.volume = 0.5;
       
