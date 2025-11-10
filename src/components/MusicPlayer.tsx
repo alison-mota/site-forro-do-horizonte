@@ -77,8 +77,8 @@ const MusicPlayer = () => {
 
   return (
     <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-      <audio ref={audioRef}>
-        <source src="/audio/Ah-sabia.mp3" type="audio/mp3" />
+      <audio ref={audioRef} autoPlay>
+        <source src="/audio/Cabe-no-peito.mp3" type="audio/mp3" />
       </audio>
       
       <button

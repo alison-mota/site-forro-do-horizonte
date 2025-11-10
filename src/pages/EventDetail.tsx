@@ -151,8 +151,6 @@ const EventDetail = () => {
                     // Pequeno delay para não sobrecarregar
                     await new Promise(resolve => setTimeout(resolve, 50));
                 }
-                
-                console.log(`Validação concluída: ${allValidUrls.length} de ${filteredImages.length} imagens válidas`);
             };
             
             processBatches();
@@ -211,7 +209,7 @@ const EventDetail = () => {
                 <div className="container mx-auto px-4 py-16 text-center">
                     <h2 className="text-3xl font-bold text-white mb-4">Evento não encontrado</h2>
                     <Link to="/fotos-dos-eventos" className="text-amber-400 hover:text-amber-300">
-                        Voltar para Fotos dos Eventos
+                        Voltar para Fotos
                     </Link>
                 </div>
             </PageBackground>
@@ -262,8 +260,6 @@ const EventDetail = () => {
                     throw new Error('Resposta não OK');
                 }
             } catch (error) {
-                console.log('Erro ao baixar via fetch, tentando método alternativo:', error);
-                
                 // Método alternativo: cria um link que aponta diretamente para a URL de download
                 // Isso força o navegador a fazer o download
                 const link = document.createElement('a');
@@ -350,7 +346,7 @@ const EventDetail = () => {
                     className="inline-flex items-center gap-2 text-white hover:text-amber-400 transition-colors mb-8"
                 >
                     <ArrowLeft className="w-5 h-5" />
-                    Voltar para Fotos dos Eventos
+                    Voltar para Fotos
                 </Link>
 
                 {/* Informações do evento */}
