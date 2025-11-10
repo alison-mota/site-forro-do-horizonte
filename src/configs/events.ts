@@ -112,10 +112,7 @@ export const fetchDriveFolderFiles = async (folderId: string): Promise<DriveFile
                     return a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' });
                 });
                 
-                console.log(`Encontrados ${sortedFiles.length} arquivos únicos de imagem na pasta`);
-                
                 files.push(...sortedFiles.map((file: any) => {
-                    console.log(`Arquivo: ${file.name} (ID: ${file.id})`);
                     return {
                         id: file.id,
                         name: file.name,
@@ -139,8 +136,6 @@ export const fetchDriveFolderFiles = async (folderId: string): Promise<DriveFile
         uniqueFiles.sort((a, b) => {
             return a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' });
         });
-
-        console.log(`Total de ${uniqueFiles.length} arquivos únicos encontrados após remoção de duplicatas`);
         
         return uniqueFiles;
     } catch (error) {
@@ -206,7 +201,6 @@ export const processEventWithDriveFolder = async (event: Event): Promise<Event> 
         if (url && !seenUrls.has(url)) {
             seenUrls.add(url);
             imageUrls.push(url);
-            console.log(`Adicionando imagem: ${file.name} (ID: ${file.id})`);
         } else if (url && seenUrls.has(url)) {
             console.warn(`URL duplicada ignorada para: ${file.name} (ID: ${file.id})`);
         }
@@ -248,8 +242,6 @@ export const processEventWithDriveFolder = async (event: Event): Promise<Event> 
     const previewImage = hasCustomPreview 
         ? event.previewImage 
         : (imageUrls.length > 0 ? imageUrls[0] : (event.previewImage || ''));
-    
-    console.log(`Total de ${imageUrls.length} URLs únicas e ${fileIds.length} IDs únicos gerados`);
 
     // Atualizar o evento com os IDs e URLs encontrados
     const updatedEvent: Event = {

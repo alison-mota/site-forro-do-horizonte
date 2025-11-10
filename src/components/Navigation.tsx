@@ -24,9 +24,9 @@ const Navigation = () => {
     { path: '/about', label: 'Quem Somos' },
     { path: '/booking', label: 'Contratantes' },
     { path: '/contact', label: 'Contato' },
-    { path: '/player', label: 'Músicas Autorais' },
-    { path: '/letras', label: 'Letras e Cifras' },
-    { path: '/fotos-dos-eventos', label: 'Fotos dos Eventos' },
+    { path: '/player', label: 'Músicas' },
+    { path: '/letras', label: 'Cifras' },
+    { path: '/fotos-dos-eventos', label: 'Fotos' },
   ];
 
   return (

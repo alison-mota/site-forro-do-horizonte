@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin } from 'lucide-react';
@@ -40,6 +40,126 @@ const sortEventsByDate = (eventsList: Event[]): Event[] => {
 const EventPhotos = () => {
     const { events, isLoading } = useEvents();
     const sortedEvents = useMemo(() => sortEventsByDate(events), [events]);
+    const [audioUnlocked, setAudioUnlocked] = useState(false);
+
+    // Função para tocar o player
+    const playAudio = async () => {
+        const audioElement = document.querySelector('audio') as HTMLAudioElement;
+        if (audioElement && audioElement.paused) {
+            try {
+                await audioElement.play();
+                setAudioUnlocked(true);
+            } catch (error) {
+                // Ignora erros de autoplay
+            }
+        }
+    };
+
+    // Toca o player automaticamente ao entrar na página
+    useEffect(() => {
+        let attempts = 0;
+        const maxAttempts = 10;
+        let intervalId: NodeJS.Timeout | null = null;
+        let hasUnlocked = false;
+
+        const getAudioElement = (): HTMLAudioElement | null => {
+            return document.querySelector('audio') as HTMLAudioElement;
+        };
+
+        const attemptPlay = async (): Promise<boolean> => {
+            const audioElement = getAudioElement();
+            
+            if (!audioElement) {
+                return false;
+            }
+
+            // Aguarda o elemento estar pronto
+            if (audioElement.readyState < 2) {
+                audioElement.load();
+            }
+
+            if (audioElement.paused) {
+                try {
+                    await audioElement.play();
+                    setAudioUnlocked(true);
+                    hasUnlocked = true;
+                    return true;
+                } catch (error) {
+                    return false;
+                }
+            }
+            return false;
+        };
+
+        // Handler para desbloquear áudio na primeira interação
+        const unlockAudio = async () => {
+            if (hasUnlocked) return;
+            
+            const success = await attemptPlay();
+            if (success) {
+                // Remove todos os listeners após sucesso
+                document.removeEventListener('click', unlockAudio);
+                document.removeEventListener('touchstart', unlockAudio);
+                document.removeEventListener('keydown', unlockAudio);
+                document.removeEventListener('mousemove', unlockAudio);
+                if (intervalId) {
+                    clearInterval(intervalId);
+                }
+            }
+        };
+
+        // Tenta encontrar e tocar imediatamente
+        const tryImmediatePlay = async () => {
+            const audioElement = getAudioElement();
+            if (audioElement) {
+                const success = await attemptPlay();
+                if (success) {
+                    return;
+                }
+            }
+
+            // Se não conseguiu, tenta periodicamente
+            attempts = 0;
+            intervalId = setInterval(async () => {
+                attempts++;
+                const audioElement = getAudioElement();
+                
+                if (audioElement) {
+                    const success = await attemptPlay();
+                    if (success || attempts >= maxAttempts) {
+                        if (intervalId) {
+                            clearInterval(intervalId);
+                            intervalId = null;
+                        }
+                    }
+                } else if (attempts >= maxAttempts) {
+                    if (intervalId) {
+                        clearInterval(intervalId);
+                        intervalId = null;
+                    }
+                }
+            }, 200);
+        };
+
+        // Inicia tentativas
+        tryImmediatePlay();
+
+        // Adiciona listeners para qualquer interação (desbloqueia autoplay)
+        document.addEventListener('click', unlockAudio, { once: true });
+        document.addEventListener('touchstart', unlockAudio, { once: true });
+        document.addEventListener('keydown', unlockAudio, { once: true });
+        document.addEventListener('mousemove', unlockAudio, { once: true });
+
+        return () => {
+            document.removeEventListener('click', unlockAudio);
+            document.removeEventListener('touchstart', unlockAudio);
+            document.removeEventListener('keydown', unlockAudio);
+            document.removeEventListener('mousemove', unlockAudio);
+            if (intervalId) {
+                clearInterval(intervalId);
+            }
+        };
+    }, []);
 
     return (
         <PageBackground>
@@ -50,7 +170,7 @@ const EventPhotos = () => {
                     className="text-4xl md:text-5xl font-serif font-bold text-center mb-16 text-white relative inline-block w-full"
                 >
                     <span className="relative">
-                        Fotos dos Eventos
+                        Fotos
                         <motion.div
                             initial={{ width: 0 }}
                             animate={{ width: '100%' }}
@@ -73,6 +193,7 @@ const EventPhotos = () => {
                             key={event.id}
                             to={`/${generateSlug(event.title)}`}
                             className="block h-full"
+                            onClick={playAudio}
                         >
                             <motion.div
                                 initial={{ opacity: 0, y: 50 }}
