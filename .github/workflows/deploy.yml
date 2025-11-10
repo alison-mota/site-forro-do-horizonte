@@ -31,6 +31,8 @@ jobs:
         run: npm ci --audit false
 
       - name: Build
+        env:
+          VITE_GOOGLE_DRIVE_API_KEY: ${{ secrets.VITE_GOOGLE_DRIVE_API_KEY }}
         run: npm run build
 
       - name: Preserve CNAME

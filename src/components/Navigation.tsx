@@ -26,6 +26,7 @@ const Navigation = () => {
     { path: '/contact', label: 'Contato' },
     { path: '/player', label: 'Músicas Autorais' },
     { path: '/letras', label: 'Letras e Cifras' },
+    { path: '/fotos-dos-eventos', label: 'Fotos dos Eventos' },
   ];
 
   return (
@@ -33,7 +34,7 @@ const Navigation = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed w-full z-50 transition-all duration-500 ${
-        isScrolled ? 'bg-black/95 backdrop-blur-md py-2' : 'bg-transparent py-4'
+        isScrolled ? 'bg-black/95 backdrop-blur-md py-2 shadow-sm' : 'bg-black/80 backdrop-blur-sm py-4'
       }`}
     >
       <div className="container mx-auto px-4">

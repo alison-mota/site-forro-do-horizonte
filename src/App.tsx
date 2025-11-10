@@ -7,6 +7,8 @@ import Booking from './pages/Booking';
 import Contact from './pages/Contact';
 import Player from './pages/Player';
 import LyricsPage from "./pages/LyricsPage.tsx";
+import EventPhotos from './pages/EventPhotos';
+import EventDetail from './pages/EventDetail';
 
 const RedirectHandler = () => {
     const navigate = useNavigate();
@@ -36,6 +38,8 @@ function App() {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/player" element={<Player />} />
                     <Route path="/letras" element={<LyricsPage />} />
+                    <Route path="/fotos-dos-eventos" element={<EventPhotos />} />
+                    <Route path="/:eventSlug" element={<EventDetail />} />
                 </Routes>
             </div>
         </Router>
