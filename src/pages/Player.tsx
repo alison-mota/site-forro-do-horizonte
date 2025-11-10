@@ -42,9 +42,12 @@ const Player = () => {
       audioRef.current.volume = volume;
     }
 
+    // Pausa o player global do header e marca como pausado pelo usuário
     const globalPlayer = document.querySelector('audio');
     if (globalPlayer) {
       globalPlayer.pause();
+      // Marca que o usuário pausou manualmente (ao entrar na página de músicas)
+      sessionStorage.setItem('userPausedMusic', 'true');
     }
 
     if (!currentTrack && tracks.length > 0) {
@@ -78,15 +81,7 @@ const Player = () => {
 
   return (
     <PageBackground>
-      <div className="container mx-auto px-4 py-16">
-        <motion.h2
-          initial={{ y: 20 }}
-          animate={{ y: 0 }}
-          className="text-5xl font-bold text-center mb-16 text-white"
-        >
-          Nossas Músicas
-        </motion.h2>
-
+      <div className="container mx-auto px-4 pt-8 pb-16">
         <div className="max-w-4xl mx-auto">
           {/* Player Interface */}
           <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-white/20 mb-8">

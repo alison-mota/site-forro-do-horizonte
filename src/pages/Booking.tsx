@@ -24,15 +24,7 @@ const Booking = () => {
 
   return (
     <PageBackground>
-      <div className="container mx-auto px-4 py-16">
-        <motion.h2
-          initial={{ y: 20 }}
-          animate={{ y: 0 }}
-          className="text-5xl font-bold text-center mb-16 text-white"
-        >
-          Área do Contratante
-        </motion.h2>
-
+      <div className="container mx-auto px-4 pt-8 pb-16">
         <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
           <motion.div
             initial={{ x: -50 }}
@@ -67,10 +59,26 @@ const Booking = () => {
                   <Mail className="w-5 h-5" />
                   forrodohorizonte@gmail.com
                 </a>
-                <p className="flex items-center gap-3 text-white">
-                  <Phone className="w-5 h-5" />
-                  (64) 98120-6193 | (34) 99902-3439
-                </p>
+                <div className="space-y-2">
+                  <a 
+                    href="https://wa.me/5564981206193" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 text-white hover:text-amber-200 transition-colors"
+                  >
+                    <Phone className="w-5 h-5" />
+                    (64) 98120-6193
+                  </a>
+                  <a 
+                    href="https://wa.me/5534999023439" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 text-white hover:text-amber-200 transition-colors"
+                  >
+                    <Phone className="w-5 h-5" />
+                    (34) 99902-3439
+                  </a>
+                </div>
                 <p className="flex items-center gap-3 text-white">
                   <MapPin className="w-5 h-5" />
                   Uberlândia, MG
