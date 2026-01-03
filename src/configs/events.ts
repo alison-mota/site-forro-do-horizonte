@@ -278,6 +278,16 @@ export const eventsData: Event[] = [
         previewImage: '/images/events/cover/aniversario-1-ano.png', // Miniatura do evento (inserir manualmente na pasta public/images/events/cover/)
         images: [], // Será preenchido automaticamente
     },
+    {
+        id: '2',
+        title: 'Último forró do ano no Dboche',
+        description: 'Último show da banda e último forró do ano do Dboche',
+        date: '30 de Dezembro, 2025',
+        location: 'Dboche Pub Show',
+        driveFolderLink: 'https://drive.google.com/drive/folders/1tm5L5Bs5-f25vk_0J-4dQITIiQZYOFQD',
+        previewImage: '/images/events/cover/ultimo-forro-do-ano-no-dboche.jpeg', // Coloque a imagem anexada nessa pasta com esse nome
+        images: [],
+    },
     // Adicione mais eventos aqui - apenas forneça o driveFolderLink!
     // Exemplo:
     // {
