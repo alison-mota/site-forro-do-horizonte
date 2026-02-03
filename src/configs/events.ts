@@ -293,7 +293,7 @@ export const eventsData: Event[] = [
         title: 'Forró com Pimenta',
         description: 'Forró do Horizonte em mais um forró com pimenta',
         date: '30 de Janeiro, 2026',
-        location: 'Pimenta',
+        location: 'Pimenta Bar e Eventos',
         driveFolderLink: 'https://drive.google.com/drive/folders/1g3QvjEn_E6-Gt7AT2T5TLRZvj91ap98v',
         previewImage: '/images/events/cover/forró-com-pimenta-janeiro-2026.jpg', // Coloque a imagem anexada nessa pasta com esse nome
         images: [],
