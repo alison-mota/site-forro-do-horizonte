@@ -295,7 +295,7 @@ export const eventsData: Event[] = [
         date: '30 de Janeiro, 2026',
         location: 'Pimenta',
         driveFolderLink: 'https://drive.google.com/drive/folders/1g3QvjEn_E6-Gt7AT2T5TLRZvj91ap98v',
-        previewImage: '/images/events/cover/forró-com-pimenta-janeiro-2026.jpeg', // Coloque a imagem anexada nessa pasta com esse nome
+        previewImage: '/images/events/cover/forró-com-pimenta-janeiro-2026.jpg', // Coloque a imagem anexada nessa pasta com esse nome
         images: [],
     },
     // Adicione mais eventos aqui - apenas forneça o driveFolderLink!
