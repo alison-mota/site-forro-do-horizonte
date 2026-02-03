@@ -308,7 +308,7 @@ export const eventsData: Event[] = [
     //     location: 'Local do evento',
     //     driveFolderLink: 'https://drive.google.com/drive/folders/SEU_FOLDER_ID_AQUI',
     //     previewImage: '/images/general/geral-01.png',
-    //     images: [],
+    //       images: [],
     // },
 ];
 
